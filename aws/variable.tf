@@ -16,3 +16,8 @@ variable "vpc_tag"{
      
      type = "string"
 }
+
+variable "env"{
+     
+     type = "string"
+}
