@@ -23,7 +23,7 @@ pipeline{
         }
        }
     }
-   stage("Plan_state"){
+    stage("Plan_state"){
       steps{
          script{
            cd aws
@@ -31,6 +31,7 @@ pipeline{
            cd -
          }
       }
-   
-   }
+    } 
+}
+
     
