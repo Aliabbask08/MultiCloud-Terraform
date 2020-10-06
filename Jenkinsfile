@@ -26,9 +26,11 @@ pipeline{
     stage("Plan_state"){
       steps{
          script{
-           cd aws
-           terraform plan -var "access_key=$AC_KEY" -var "secret_key=$SEC_KEY"
-           cd -
+          sh ''' 
+              cd aws
+              terraform plan -var "access_key=$AC_KEY" -var "secret_key=$SEC_KEY"
+              cd -
+          '''
          }
       }
     } 
