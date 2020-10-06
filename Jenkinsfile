@@ -13,8 +13,7 @@ pipeline{
 }
     stage("Repo_clone"){
       steps {
-        checkout ([$class: 'GitSCM', branches: [[name: '*/master']], userRemoteConfigs: [[credentialsId: 'instance_id', url: 'gi
-t@github.com:Vikas-Tamboli/debug1.git']]])
+        checkout ([$class: 'GitSCM', branches: [[name: '*/master']], userRemoteConfigs: [[ url: 'https://github.com/Aliabbask08/MultiCloud-Terraform.git']]])
 }
 }
     stage("terraform_init"){
