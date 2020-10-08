@@ -33,6 +33,17 @@ pipeline{
           '''
          }
       }
+    }
+    stage("apply_state"){
+      steps{
+         script{
+          sh '''
+              cd aws
+              terraform apply -var "access_key=$AC_KEY" -var "secret_key=$SEC_KEY" --auto-approve
+              cd -
+          '''
+         }
+      }
     } 
 }
 }
