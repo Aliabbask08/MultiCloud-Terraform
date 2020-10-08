@@ -19,7 +19,10 @@ pipeline{
     stage("terraform_init"){
        steps{
          script{
-          sh "bash plugins.sh"
+           sh '''
+               terraform init
+           '''
+          //sh "bash plugins.sh"
         }
        }
     }
