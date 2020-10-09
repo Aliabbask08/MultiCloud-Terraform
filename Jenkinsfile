@@ -20,9 +20,8 @@ pipeline{
        steps{
          script{
            sh '''
-               terraform init
+              bash plugins.sh $AC_KEY $SEC_KEY
            '''
-          //sh "bash plugins.sh"
         }
        }
     }
