@@ -3,12 +3,20 @@ pipeline{
   environment {
          AC_KEY = credentials('AWS_ACCESS_KEY')
          SEC_KEY = credentials('AWS_SECRET_KEY')
+         TAG = "${sh(script:'git checkout master|git log -1 --pretty=format:%h', returnStdout: true)}"
   
   }
   stages {
     stage("Workspace_cleanup"){
       steps{
          step([$class: 'WsCleanup'])
+}
+}
+    stage('Tag'){
+        steps {
+            script{
+                sh 'echo $TAG'
+}
 }
 }
     stage("Repo_clone"){
