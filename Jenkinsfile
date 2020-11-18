@@ -1,11 +1,11 @@
 pipeline{
-  agent any
   environment {
          //AC_KEY = credentials('AWS_ACCESS_KEY')
          //SEC_KEY = credentials('AWS_SECRET_KEY')
          TAG = "${sh(script:'git checkout master|git log -1 --pretty=format:%h', returnStdout: true)}"
   
   }
+  agent any
   stages {
     stage("Workspace_cleanup"){
       steps{
